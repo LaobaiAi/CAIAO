@@ -13,7 +13,7 @@ tags: [MCP-SDK, 实现模式, Hub]
 MCP SDK 路径的框架代码位于 `caiao/` 包。获取方式：
 
 ```bash
-pip install -e ./caiao
+pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"
 ```
 
 核心文件：`caiao/hub.py`（CAIAOClientHub）、`caiao/discovery.py`（清单发现）。完整说明见 `caiao/README.md`。

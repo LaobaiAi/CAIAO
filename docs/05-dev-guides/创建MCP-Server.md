@@ -14,7 +14,7 @@ tags: [MCP-SDK, 开发, 教程]
 
 - Python 3.11+
 - `mcp>=1.0.0` 已安装
-- 项目已安装 `caiao` 包（`pip install -e ./caiao`）
+- 项目已安装 `caiao` 包（`pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"`）
 
 ## 步骤一：创建 Server 目录和文件
 

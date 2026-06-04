@@ -66,7 +66,7 @@ caiao/                          ← GitHub 仓库根
 这是一个**框架 + 文档一体化仓库**，面向三类用户：
 
 1. **想快速试试的人**：打开 `caiao_lightweight/`，复制三个文件到自己项目，看 README 的 quickstart
-2. **想正式用的人**：`pip install -e ./caiao`，运行 `caiao init` 生成项目骨架，按文档开发
+2. **想正式用的人**：`pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"`，运行 `caiao init` 生成项目骨架，按文档开发
 3. **想深入理解的人**：读 `docs/`，从 MANIFEST.yaml 索引开始，按等级标记定向深入
 
 ---
@@ -89,7 +89,7 @@ from hub import Hub
 ### MCP SDK 路径（pip install）
 
 ```
-pip install -e ./caiao
+pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"
 caiao init my-project
 cd my-project
 caiao new server my-solver

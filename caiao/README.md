@@ -10,7 +10,7 @@ CAIAO turns every solver, tool, or external capability into an independent Serve
 
 | | MCP SDK Path | Lightweight Path |
 |---|---|---|
-| **What** | `pip install caiao` | Copy 3 files into your project |
+| **What** | `pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"` | Copy 3 files into your project |
 | **Dependencies** | `mcp>=1.0.0` | Python stdlib only |
 | **Async** | Full asyncio lifecycle | Synchronous, in-process or subprocess |
 | **Best for** | Production platforms, team projects, AI ecosystem | Embedded Python (Abaqus/Blender), prototypes, CLI tools |
@@ -21,7 +21,7 @@ CAIAO turns every solver, tool, or external capability into an independent Serve
 ## Quickstart (MCP SDK path)
 
 ```bash
-pip install -e ./caiao
+pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"
 ```
 
 ```python

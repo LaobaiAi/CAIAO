@@ -8,7 +8,7 @@
 
 | 路径 | 类型 | 获取方式 |
 |------|------|---------|
-| `caiao/` | MCP SDK 完整实现 | `pip install -e ./caiao` 或 `caiao init my-project` |
+| `caiao/` | MCP SDK 完整实现 | `pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"` 或 `caiao init my-project` |
 | `caiao_lightweight/` | 零依赖轻量实现 | 复制 `server.py` + `hub.py` + `subprocess.py` 到项目 |
 
 ---

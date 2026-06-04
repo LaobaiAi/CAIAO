@@ -34,7 +34,7 @@ tags: [入门, 启动, 新项目]
 ### MCP SDK 实现初始化
 
 1. 确保 `mcp>=1.0.0` 已安装
-2. 安装 CAIAO 框架包：`pip install -e ./caiao`
+2. 安装 CAIAO 框架包：`pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"`
 3. 或使用 CLI 生成项目骨架：
    ```bash
    caiao init my-project
