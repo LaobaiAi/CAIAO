@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: 创建 MCP SDK Server——目录结构、实现契约、编写清单、注册
+abstract_en: Creating an MCP SDK Server - directory structure, implementation contract, writing the manifest, registration
 prerequisites: []
 tags: [MCP-SDK, 开发, 教程]
 ---

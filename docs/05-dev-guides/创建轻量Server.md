@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: 四步创建轻量 CAIAO Server——继承 CAIAOServer、@tool 装饰器、选择模式、注册 Hub
+abstract_en: Four steps to create a lightweight CAIAO Server - subclass CAIAOServer, @tool decorator, choose mode, register with Hub
 prerequisites: []
 tags: [轻量实现, 开发, 教程]
 ---

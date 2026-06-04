@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: CAIAO Server 三层测试金字塔、两种实现测试方法、四种常见调试场景、Bug 模式速查
+abstract_en: CAIAO Server three-tier test pyramid, testing methods for both implementations, four common debugging scenarios, Bug pattern quick reference
 prerequisites: []
 tags: [测试, 调试, 质量]
 ---

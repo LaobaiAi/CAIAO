@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: Iron-Fall 前身项目的完整详情（版本、阶段、KPI、数据模型、限制）
+abstract_en: Complete details of the Iron-Fall predecessor project (versions, phases, KPIs, data model, constraints)
 prerequisites: []
 tags: [附录, Iron-Fall, 历史]
 ---

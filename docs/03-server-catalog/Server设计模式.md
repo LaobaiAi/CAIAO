@@ -2,6 +2,7 @@
 level: ★★★
 audience: architect
 abstract: 七种 CAIAO Server 设计模式——合并、编排管线、基础设施+功能、LLM 三层架构、双模 Hub、原子模板、管线铁律
+abstract_en: Seven CAIAO Server design patterns - merge, orchestration pipeline, infrastructure+function, three-layer LLM, dual-mode Hub, atomic template, pipeline invariants
 prerequisites: [Server种类说明.md]
 tags: [设计模式, 架构, 合并]
 ---

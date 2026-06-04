@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: 四维度（复用/简化/效率/高度）代码审查方法论——扫描清单、执行流程、检查清单
+abstract_en: Four-dimension code review methodology (reuse/simplify/efficiency/altitude) - scan list, execution flow, checklist
 prerequisites: [代码审查发现与质量评估.md]
 tags: [审查, 简化, 代码质量]
 ---

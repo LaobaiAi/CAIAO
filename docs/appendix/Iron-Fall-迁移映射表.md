@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: Iron-Fall 12 个求解器到 CAIAO Server 的完整映射表
+abstract_en: Complete mapping table of 12 Iron-Fall solvers to CAIAO Servers
 prerequisites: []
 tags: [附录, 迁移, 映射]
 ---

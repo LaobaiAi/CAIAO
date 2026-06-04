@@ -2,6 +2,7 @@
 level: ★★★
 audience: architect
 abstract: LLM 工具发现的两层设计、System Prompt 五条原则、Agent Loop 实现模式
+abstract_en: Two-layer LLM tool discovery design, five System Prompt principles, Agent Loop implementation patterns
 prerequisites: [CAIAO概述.md]
 tags: [System-Prompt, LLM, Agent-Loop, 工具发现]
 ---

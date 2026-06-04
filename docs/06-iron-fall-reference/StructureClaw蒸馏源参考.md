@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: 从外部项目蒸馏领域能力的评估框架、取舍原则与四条经验
+abstract_en: Evaluation framework, trade-off principles, and four lessons for distilling domain capabilities from external projects
 prerequisites: []
 tags: [蒸馏, 外部项目, 取舍]
 ---

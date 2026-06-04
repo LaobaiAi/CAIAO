@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: Blender Daemon 架构的完整实施设计（含 7 步计划、bpy API 细节）
+abstract_en: Complete Blender Daemon implementation design (including 7-step plan, bpy API details)
 prerequisites: []
 tags: [附录, Blender, Daemon]
 ---

@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: CAIAO 与 MCP 协议的分层关系、两种实现的详细对比、升级路径
+abstract_en: Layered relationship between CAIAO and MCP protocol, detailed comparison of two implementations, upgrade path
 prerequisites: [CAIAO概述.md]
 tags: [MCP, 协议, 对比]
 ---

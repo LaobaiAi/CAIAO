@@ -2,6 +2,7 @@
 level: ★★★
 audience: architect
 abstract: 常驻服务（Daemon）通用架构模式——适用场景、角色定义、参数扩展三机制、进程模型、容错设计
+abstract_en: Daemon architecture pattern - applicable scenarios, role definition, three parameter extension mechanisms, process model, fault tolerance design
 prerequisites: [核心设计原则.md]
 tags: [Daemon, 架构模式, 常驻服务]
 ---

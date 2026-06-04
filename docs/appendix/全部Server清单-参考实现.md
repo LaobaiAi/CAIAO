@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: 参考实现的完整 Server 清单（含工具名、引擎、状态）
+abstract_en: Complete Server inventory of the reference implementation (with tool names, engines, status)
 prerequisites: []
 tags: [附录, Server, 参考]
 ---

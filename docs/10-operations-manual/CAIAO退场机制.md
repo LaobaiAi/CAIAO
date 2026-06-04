@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: CAIAO 框架的完整退场指南——如何在不破坏已有 Server 的前提下干净移除 CAIAO
+abstract_en: Complete exit guide for CAIAO - how to cleanly remove the framework without affecting existing Servers
 prerequisites: []
 tags: [退场, 卸载, 迁移, 解耦]
 ---

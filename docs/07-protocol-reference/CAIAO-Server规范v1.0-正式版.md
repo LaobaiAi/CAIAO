@@ -2,6 +2,7 @@
 level: ★★★
 audience: architect
 abstract: CAIAO Server 规范 v1.0 正式版——三接口契约、目录结构、版本管理、依赖声明、测试要求、MCP 兼容性映射
+abstract_en: CAIAO Server specification v1.0 - three-interface contract, directory structure, version management, dependency declaration, testing requirements, MCP compatibility mapping
 prerequisites: [核心设计原则.md]
 tags: [规范, 协议, 接口, v1.0]
 ---

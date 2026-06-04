@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: CAIAO Server 三种类的详细说明与使用场景
+abstract_en: Three CAIAO Server kinds explained with their use cases
 prerequisites: [全部Server清单.md]
 tags: [Server种类, infrastructure, composite]
 ---

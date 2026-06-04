@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: 项目向 CAIAO 迁移的通用方法论——求解器盘点、分类优先级、通信协议迁移、数据模型迁移
+abstract_en: General migration methodology - solver inventory, prioritization, protocol migration, data model migration
 prerequisites: [项目概述.md]
 tags: [迁移, 方法论, 协议]
 ---

@@ -1,10 +1,23 @@
+---
+level: ★
+audience: overview
+abstract: CAIAO 知识库索引——框架代码、知识库结构、阅读等级说明、选择指南
+abstract_en: CAIAO knowledge base index — framework code, knowledge base structure, reading level guide, selection guide
+tags: [索引, 入门, 知识库]
+---
+
 # CAIAO 知识库 — 完整参考
+> CAIAO Knowledge Base — Complete Reference
 
 > CAIAO 体系包含两部分：**框架代码**（`caiao/` + `caiao_lightweight/`）和**知识库文档**（本目录）。
 > 框架代码是可执行的实体——安装或复制即用。知识库是设计原理、操作手册和参考指南。
 > **这是 CAIAO 范式的权威参考文档。**
+>
+> *The CAIAO system consists of two parts: **framework code** and **knowledge base docs** (this directory).
+> The framework code is executable — install or copy and run. The knowledge base is design rationale, operations manual, and reference guide.
+> This is the authoritative documentation for the CAIAO paradigm.*
 
-## 框架代码
+## 框架代码 / Framework Code
 
 | 路径 | 类型 | 获取方式 |
 |------|------|---------|
@@ -13,9 +26,10 @@
 
 ---
 
-## 参考实现
+## 参考实现 / Reference Implementations
 
 两个参考实现展示了 CAIAO 的两种实现路径，加上 CAIAO 之前的前身系统：
+*Two reference implementations demonstrate the two CAIAO paths, plus the predecessor system:*
 
 | 实现 | 角色 | CAIAO 实现 |
 |------|------|------------|
@@ -25,48 +39,83 @@
 
 ---
 
-## 知识库结构
+## 知识库结构 / Knowledge Base Structure
 
 ### 01-core-concepts
+**核心概念 / Core Concepts**
+
 CAIAO 是什么、与 MCP 的关系、核心设计原则。适合初次接触 CAIAO 的开发者。
+*What CAIAO is, its relationship with MCP, and core design principles. Best for first-time readers.*
 
 ### 02-two-implementations
+**两种实现 / Two Implementations**
+
 对比两种 CAIAO 实现范式：
 - **MCP SDK 实现**：基于 `mcp` Python 包，异步，完整生命周期管理
 - **轻量实现**：自研 `CAIAOServer` 基类 + `@tool` 装饰器，同步，零依赖
 - **轻量实现的独特优势**：为什么轻量不是「简化版」，而是有意识的独立架构选择
 - **适用场景对比与选择指南**：决策矩阵 + 混合策略
 
+*A comparison of the two CAIAO paradigms: MCP SDK vs lightweight, unique advantages of each, and a selection guide with decision matrix and hybrid strategies.*
+
 ### 03-Server 完整目录
+**Server Catalog**
+
 全部参考实现的 Server 完整清单（涵盖多种实现），按 11 大类别分类：
 - **可复用代码模式**：从实际代码中提炼的 9 种跨项目设计模式
 
+*Complete Server inventory across all reference implementations, organized into 11 categories, plus 9 cross-project reusable code patterns.*
+
 ### 04-caiao.yaml 清单系统
+**caiao.yaml Manifest System**
+
 Server 声明的标准格式：身份、生命周期、命令、健康检查、工具、管线、依赖。
+*Standard Server declaration format: identity, lifecycle, commands, health checks, tools, pipelines, dependencies.*
 
 ### 05-dev-guides
+**开发指南 / Development Guides**
+
 - 创建 MCP SDK Server、创建轻量 Server、蒸馏方法论
 - **前端集成模式**：两种前端如何消费 CAIAO Server
 - **贡献者指南**：分支策略、Commit 规范（Conventional Commits + CAIAO 项目 scopes）、代码风格、PR 流程、数据流约定
 - **System Prompt 与工具发现设计指南**：LLM 如何发现和理解工具、静态注册 vs 动态发现、Agent Loop 实现模式（缓存/取消/暂停/流式输出）
 
+*Creating Servers (both MCP SDK and lightweight), distillation methodology, frontend integration patterns, contributor guidelines, and System Prompt design for LLM tool discovery.*
+
 ### 06-Iron-Fall 参考
+**Iron-Fall Reference**
+
 CAIAO 之前的状态：架构、数据模型、求解器级联、向 CAIAO 迁移的逐求解器路径。
 - **StructureClaw 蒸馏源参考**：蒸馏了什么、定位差异、取舍原则
 
+*CAIAO's predecessor: architecture, data models, solver cascade, and per-solver migration paths to CAIAO. StructureClaw distillation reference.*
+
 ### 07-protocol-reference
+**协议参考 / Protocol Reference**
+
 CAIAO 契约规则、stdio 通信协议（两种实现）、命名规范。
 - **CAIAO Server 规范 v1.0 正式版**：完整的三接口契约、目录结构、版本管理（SemVer）、依赖声明格式、测试要求表、MCP 兼容性映射、生态贡献 Checklist
 
+*Contract rules, stdio communication protocol (both implementations), naming conventions, and the full CAIAO Server specification v1.0.*
+
 ### 08-evolution-history
+**演进历史 / Evolution History**
+
 CAIAO 的 8 个里程碑、Server 数量增长曲线、合并路线图。
+*CAIAO's 8 milestones, Server count growth curve, and merge roadmap.*
 
 ### 09-critique-and-reflection
+**批判与反思 / Critique & Reflection**
+
 - **局限与不足**：坦诚分析 MCP SDK 实现的 6 个问题、轻量实现的 5 个问题、共有的 6 个局限、4 个设计层面的反思
 - **反思与改进方向**：如果重来会改变的 4 个决策、4 个值得放大的意外发现、6 个待探索方向、4 条架构演进教训
 - **代码审查发现与质量评估**：通用 CAIAO 项目审查框架（9 个维度、4 条通用经验教训、参考资源）。完整审查报告见附录
 
+*Known limitations of both implementations, honest design reflections, improvement directions, and a universal CAIAO project review framework.*
+
 ### 10-operations-manual
+**操作手册 / Operations Manual**
+
 基于真实案例的完整操作流程，可直接执行：
 - **项目吸收完整操作指南**：五步法 SOP + 六维度兼容性评估 + Wrapper 模式 + 两个真实案例对比（蒸汽轮机 vs Abaqus）
 - **Server 合并完整操作指南**：何时合并 + 六步骤 + 两次真实合并细节 + 效果评估 + 铁律
@@ -75,8 +124,11 @@ CAIAO 的 8 个里程碑、Server 数量增长曲线、合并路线图。
 - **Blender Daemon 架构实施指南**：架构升级路线图 + 标准文件格式 + 参数扩展三机制 + 7 步实施计划
 - **新项目 CAIAO 化启动指南**：15 分钟初始化 + 第一台 Server 30 分钟 + 渐进式复杂度路线 + 6 条约定
 
-### appendix（附录）
+*Executable SOPs based on real cases: project absorption, Server merging, testing & debugging, Simplify code review, Blender Daemon implementation, and new project CAIAO-ification.*
+
+### appendix（附录 / Appendix）
 参考实现的项目详情、迁移映射表、代码审查报告、Blender Daemon 实施案例、项目时间线等。供选读，正文中有通用方法论和操作示例时可通过链接跳转。
+*Project details, migration mapping tables, code review reports, Blender Daemon case studies, and timelines for reference implementations.*
 
 ---
 

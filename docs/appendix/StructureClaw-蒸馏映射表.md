@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: StructureClaw 6 个技能包到 CAIAO Server 的完整蒸馏映射表
+abstract_en: Complete distillation mapping table from 6 StructureClaw skill packages to CAIAO Servers
 prerequisites: []
 tags: [附录, 蒸馏, 映射]
 ---

@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: 基于 MCP SDK 的 CAIAO 完整实现模式——Hub 生命周期、自动发现、资源自适应并行、语义路由
+abstract_en: Full MCP SDK implementation pattern - Hub lifecycle, auto-discovery, adaptive parallel resource management, semantic routing
 prerequisites: [CAIAO概述.md]
 tags: [MCP-SDK, 实现模式, Hub]
 ---

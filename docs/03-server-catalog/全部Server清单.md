@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: CAIAO Server 功能分类框架与设计模式速查，完整清单见附录
+abstract_en: CAIAO Server functional classification framework with quick design-pattern reference; full catalog in appendix
 prerequisites: []
 tags: [Server, 目录, 分类]
 ---

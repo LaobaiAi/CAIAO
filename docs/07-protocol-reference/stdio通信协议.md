@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: CAIAO Server 的 stdio 通信协议——MCP SDK 版本与轻量版本的 JSON-line 实现、子进程生命周期管理、升级路径
+abstract_en: CAIAO Server stdio communication protocol - MCP SDK and lightweight JSON-line implementations, subprocess lifecycle, upgrade path
 prerequisites: []
 tags: [通信协议, stdio, JSON-RPC]
 ---

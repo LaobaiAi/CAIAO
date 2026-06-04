@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: 从零启动 CAIAO 项目的完整指南——15 分钟初始化、30 分钟第一台 Server、渐进式复杂度路线
+abstract_en: Complete guide to starting a CAIAO project from scratch - 15min initialization, 30min first Server, progressive complexity roadmap
 prerequisites: [CAIAO概述.md]
 tags: [入门, 启动, 新项目]
 ---

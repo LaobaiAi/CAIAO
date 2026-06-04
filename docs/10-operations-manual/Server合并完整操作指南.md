@@ -2,6 +2,7 @@
 level: ★★
 audience: developer
 abstract: Server 合并六步 SOP——画通信图、创建目录、导入逻辑、实现编排、MCP 接口、注册测试
+abstract_en: Six-step SOP for Server merging - communication diagram, directory creation, logic import, orchestration, MCP interface, registration and testing
 prerequisites: [核心设计原则.md]
 tags: [合并, 操作指南, SOP]
 ---

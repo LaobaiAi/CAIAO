@@ -2,6 +2,7 @@
 level: ★
 audience: overview
 abstract: CAIAO 的定义、核心理念、品牌体系与关键概念速查
+abstract_en: Definition, core philosophy, brand system, and key concept reference for CAIAO
 prerequisites: []
 tags: [概念, 入门, 架构]
 ---
