@@ -1,0 +1,4 @@
+name: {{name}}
+version: 0.1.0
+caiao_version: "0.1.0"
+caiao_path: lightweight

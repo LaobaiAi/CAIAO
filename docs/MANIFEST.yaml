@@ -1,0 +1,473 @@
+name: CAIAO Knowledge Base
+version: "1.0"
+last_updated: "2026-06-04"
+description: >
+  CAIAO 知识体系的完整文档索引。覆盖 CAIAO 概念定义、两种实现路径（MCP SDK 与轻量）、
+  Server 清单与设计模式、caiao.yaml 声明式系统、开发指南、Iron-Fall 迁移参考、
+  协议规范、演进历史、批判反思、操作手册及附录资料。面向架构决策者、开发者及入门读者。
+
+framework:
+  mcp_sdk:
+    path: ../caiao
+    description: MCP SDK 完整实现，pip-installable 包
+    entry: hub.py (CAIAOClientHub), discovery.py (清单发现)
+  lightweight:
+    path: ../caiao_lightweight
+    description: 零依赖轻量实现，三个文件复制即用
+    files: [server.py, hub.py, subprocess.py]
+
+structure:
+  - slug: core-concepts
+    dir: 01-core-concepts
+    display_zh: 核心概念
+  - slug: two-implementations
+    dir: 02-two-implementations
+    display_zh: 两种实现路径
+  - slug: server-catalog
+    dir: 03-server-catalog
+    display_zh: Server 清单与模式
+  - slug: caiao-yaml-system
+    dir: 04-caiao-yaml-system
+    display_zh: caiao.yaml 声明式系统
+  - slug: dev-guides
+    dir: 05-dev-guides
+    display_zh: 开发指南
+  - slug: iron-fall-reference
+    dir: 06-iron-fall-reference
+    display_zh: Iron-Fall 迁移参考
+  - slug: protocol-reference
+    dir: 07-protocol-reference
+    display_zh: 协议与契约参考
+  - slug: evolution-history
+    dir: 08-evolution-history
+    display_zh: 演进历史
+  - slug: critique-and-reflection
+    dir: 09-critique-and-reflection
+    display_zh: 批判与反思
+  - slug: operations-manual
+    dir: 10-operations-manual
+    display_zh: 操作手册
+  - slug: appendix
+    dir: appendix
+    display_zh: 附录
+
+files:
+  # ============================================================
+  # 01-core-concepts
+  # ============================================================
+  - path: 01-core-concepts/CAIAO概述.md
+    title: CAIAO 概述
+    level: "★"
+    audience: overview
+    abstract: CAIAO 的定义、核心理念、品牌体系与关键概念速查
+    prerequisites: []
+    tags: [概念, 入门, 架构]
+
+  - path: 01-core-concepts/CAIAO与MCP的关系.md
+    title: CAIAO 与 MCP 的关系
+    level: "★★"
+    audience: developer
+    abstract: CAIAO 与 MCP 协议的分层关系、两种实现的详细对比、升级路径
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [MCP, 协议, 对比]
+
+  - path: 01-core-concepts/核心设计原则.md
+    title: 核心设计原则
+    level: "★★★"
+    audience: architect
+    abstract: CAIAO 四大设计原则（Server 独立/原子单元/合并不修改/按 ROI 提取共享逻辑）的详细阐述
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [设计原则, 架构, 契约]
+
+  # ============================================================
+  # 02-two-implementations
+  # ============================================================
+  - path: 02-two-implementations/MCP-SDK实现（拆除模拟器）.md
+    title: MCP-SDK 实现（拆除模拟器）
+    level: "★★"
+    audience: developer
+    abstract: 基于 MCP SDK 的 CAIAO 完整实现模式：Hub 生命周期、自动发现、资源自适应并行、语义路由
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+      - 01-core-concepts/CAIAO与MCP的关系.md
+    tags: [MCP-SDK, 实现模式, Hub]
+
+  - path: 02-two-implementations/轻量实现（钢框架设计）.md
+    title: 轻量实现（钢框架设计）
+    level: "★★"
+    audience: developer
+    abstract: 零依赖自建 CAIAO 轻量实现模式：CAIAOServer 基类、@tool 装饰器、Hub 双模式、SubprocessManager
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+      - 01-core-concepts/CAIAO与MCP的关系.md
+    tags: [轻量实现, 零依赖, 同步]
+
+  - path: 02-two-implementations/轻量实现的独特优势.md
+    title: 轻量实现的独特优势
+    level: "★★"
+    audience: developer
+    abstract: 轻量 CAIAO 不是简化版而是独立架构选择——七大独特优势与六项已知局限
+    prerequisites:
+      - 02-two-implementations/轻量实现（钢框架设计）.md
+    tags: [轻量实现, 架构决策, 对比]
+
+  - path: 02-two-implementations/适用场景对比与选择指南.md
+    title: 适用场景对比与选择指南
+    level: "★"
+    audience: overview
+    abstract: 两实现路径的十维决策矩阵、选择流程图、混合策略建议
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [选择指南, 决策矩阵, 入门]
+
+  # ============================================================
+  # 03-server-catalog
+  # ============================================================
+  - path: 03-server-catalog/全部Server清单.md
+    title: 全部 Server 清单
+    level: "★"
+    audience: overview
+    abstract: CAIAO Server 功能分类框架与设计模式速查，完整清单见附录
+    prerequisites: []
+    tags: [Server, 目录, 分类]
+
+  - path: 03-server-catalog/Server种类说明.md
+    title: Server 种类说明
+    level: "★★"
+    audience: developer
+    abstract: CAIAO Server 三种类（atomic-mcp/composite/infrastructure）的详细说明与使用场景
+    prerequisites:
+      - 03-server-catalog/全部Server清单.md
+    tags: [Server种类, infrastructure, composite]
+
+  - path: 03-server-catalog/Server设计模式.md
+    title: Server 设计模式
+    level: "★★★"
+    audience: architect
+    abstract: 七种 CAIAO Server 设计模式：合并、编排管线、基础设施+功能、LLM 三层架构、双模 Hub、原子模板、管线铁律
+    prerequisites:
+      - 03-server-catalog/Server种类说明.md
+    tags: [设计模式, 架构, 合并]
+
+  - path: 03-server-catalog/可复用代码模式.md
+    title: 可复用代码模式
+    level: "★★★"
+    audience: architect
+    abstract: 从实际代码提炼的九种跨项目可复用模式：单源默认值、三层 LLM、智能摘要、协议转换器、自动归档、可追溯计算、双模 Server、优雅降级、模式选用指南
+    prerequisites:
+      - 03-server-catalog/Server设计模式.md
+    tags: [代码模式, 复用, 最佳实践]
+
+  # ============================================================
+  # 04-caiao-yaml-system
+  # ============================================================
+  - path: 04-caiao-yaml-system/清单规范.md
+    title: caiao.yaml 清单规范
+    level: "★★"
+    audience: developer
+    abstract: caiao.yaml 声明式清单的完整规范：身份字段、生命周期、命令配置、健康检查、工具声明、管线定义、依赖管理
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [caiao.yaml, 清单, 配置, 自动发现]
+
+  # ============================================================
+  # 05-dev-guides
+  # ============================================================
+  - path: 05-dev-guides/创建MCP-Server.md
+    title: 创建 MCP Server
+    level: "★★"
+    audience: developer
+    abstract: 五步创建 MCP SDK Server：目录结构、实现契约、编写清单、注册、重启
+    prerequisites:
+      - 02-two-implementations/MCP-SDK实现（拆除模拟器）.md
+    tags: [MCP-SDK, 开发, 教程]
+
+  - path: 05-dev-guides/创建轻量Server.md
+    title: 创建轻量 Server
+    level: "★★"
+    audience: developer
+    abstract: 四步创建轻量 CAIAO Server：继承 CAIAOServer、@tool 装饰器、选择模式、注册 Hub
+    prerequisites:
+      - 02-two-implementations/轻量实现（钢框架设计）.md
+    tags: [轻量实现, 开发, 教程]
+
+  - path: 05-dev-guides/蒸馏方法论.md
+    title: 蒸馏方法论
+    level: "★★★"
+    audience: architect
+    abstract: 从复杂系统蒸馏领域能力为 CAIAO Server 的六步方法论：源分析、边界划分、数据抽象、独立实现、契约验证、编排演示
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+      - 01-core-concepts/核心设计原则.md
+    tags: [蒸馏, 方法论, 迁移]
+
+  - path: 05-dev-guides/前端集成模式.md
+    title: 前端集成模式
+    level: "★★"
+    audience: developer
+    abstract: 前端消费 CAIAO Server 的两种集成模式与六条开发注意事项
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [前端, 集成, WebSocket, REST]
+
+  - path: 05-dev-guides/贡献者指南.md
+    title: 贡献者指南
+    level: "★★"
+    audience: developer
+    abstract: CAIAO 项目贡献规范：分支策略、Conventional Commits、代码风格、PR 流程
+    prerequisites: []
+    tags: [贡献, 规范, Git, 代码风格]
+
+  - path: 05-dev-guides/System-Prompt与工具发现设计指南.md
+    title: System Prompt 与工具发现设计指南
+    level: "★★★"
+    audience: architect
+    abstract: LLM 工具发现的两层设计、System Prompt 五条原则、Agent Loop 实现模式
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [System-Prompt, LLM, Agent-Loop, 工具发现]
+
+  # ============================================================
+  # 06-iron-fall-reference
+  # ============================================================
+  - path: 06-iron-fall-reference/项目概述.md
+    title: Iron-Fall 项目概述
+    level: "★"
+    audience: overview
+    abstract: 从非 CAIAO 架构向 CAIAO 迁移的案例：架构对比、数据模型映射、六条迁移原则
+    prerequisites: []
+    tags: [迁移, 案例, 架构对比]
+
+  - path: 06-iron-fall-reference/向CAIAO迁移的路径.md
+    title: 向 CAIAO 迁移的路径
+    level: "★★"
+    audience: developer
+    abstract: 项目向 CAIAO 迁移的通用方法论：求解器盘点、分类优先级、通信协议迁移、数据模型迁移
+    prerequisites:
+      - 06-iron-fall-reference/项目概述.md
+    tags: [迁移, 方法论, 协议]
+
+  - path: 06-iron-fall-reference/StructureClaw蒸馏源参考.md
+    title: StructureClaw 蒸馏源参考
+    level: "★★"
+    audience: developer
+    abstract: 从外部项目蒸馏领域能力的评估框架、取舍原则与四条经验
+    prerequisites:
+      - 05-dev-guides/蒸馏方法论.md
+    tags: [蒸馏, 外部项目, 取舍]
+
+  # ============================================================
+  # 07-protocol-reference
+  # ============================================================
+  - path: 07-protocol-reference/CAIAO-Server规范v1.0-正式版.md
+    title: CAIAO Server 规范 v1.0 正式版
+    level: "★★★"
+    audience: architect
+    abstract: CAIAO Server 规范 v1.0 正式版：三接口契约、目录结构、版本管理、依赖声明、测试要求、MCP 兼容性映射
+    prerequisites:
+      - 01-core-concepts/核心设计原则.md
+    tags: [规范, 协议, 接口, v1.0]
+
+  - path: 07-protocol-reference/stdio通信协议.md
+    title: stdio 通信协议
+    level: "★★"
+    audience: developer
+    abstract: CAIAO Server 的 stdio 通信协议：MCP SDK 版本与轻量版本的 JSON-line 实现、子进程生命周期管理、升级路径
+    prerequisites:
+      - 01-core-concepts/CAIAO与MCP的关系.md
+    tags: [通信协议, stdio, JSON-RPC]
+
+  - path: 07-protocol-reference/命名规范.md
+    title: 命名规范
+    level: "★"
+    audience: developer
+    abstract: CAIAO 命名规范：类名、常量、文件名、目录、工具名、管线/合并 Server、基础设施 Server 的命名约定
+    prerequisites: []
+    tags: [命名, 规范, 约定]
+
+  - path: 07-protocol-reference/契约规则.md
+    title: 契约规则
+    level: "★★★"
+    audience: architect
+    abstract: CAIAO 契约规则：三个强制接口、七条规则（R1-R7）、Input Schema 设计原则、带 calc_processes 的输出规范
+    prerequisites:
+      - 07-protocol-reference/CAIAO-Server规范v1.0-正式版.md
+    tags: [契约, 接口, Schema, 规则]
+
+  # ============================================================
+  # 08-evolution-history
+  # ============================================================
+  - path: 08-evolution-history/版本演进.md
+    title: 版本演进
+    level: "★★"
+    audience: developer
+    abstract: CAIAO 体系六大关键设计决策及其演进逻辑：MCP SDK 选型、Server 原子化、Merge 模式、双路径共存、Infrastructure 种类、Daemon 模式
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [演进, 设计决策, 历史]
+
+  - path: 08-evolution-history/合并路线图.md
+    title: 合并路线图
+    level: "★★★"
+    audience: architect
+    abstract: CAIAO Server 合并的概念、原则、方法论和模板——BPE 式高频组合自动检测与固化的完整设计
+    prerequisites:
+      - 01-core-concepts/核心设计原则.md
+    tags: [合并, 路线图, BPE, 编排]
+
+  # ============================================================
+  # 09-critique-and-reflection
+  # ============================================================
+  - path: 09-critique-and-reflection/代码审查发现与质量评估.md
+    title: 代码审查发现与质量评估
+    level: "★★"
+    audience: developer
+    abstract: CAIAO 项目通用审查框架：九维评分体系、审查方法论、四条通用经验教训
+    prerequisites: []
+    tags: [代码审查, 质量, 方法论]
+
+  - path: 09-critique-and-reflection/反思与改进方向.md
+    title: 反思与改进方向
+    level: "★★★"
+    audience: architect
+    abstract: 如果重来会改变的四项决策、值得放大的四项意外发现、六个待探索方向、四条架构演进教训
+    prerequisites:
+      - 08-evolution-history/版本演进.md
+    tags: [反思, 改进, 架构演进]
+
+  - path: 09-critique-and-reflection/局限与不足.md
+    title: 局限与不足
+    level: "★★★"
+    audience: architect
+    abstract: CAIAO 两类实现的已知局限、共有问题与四项设计层面的坦诚反思
+    prerequisites:
+      - 02-two-implementations/MCP-SDK实现（拆除模拟器）.md
+      - 02-two-implementations/轻量实现（钢框架设计）.md
+    tags: [局限, 不足, 技术债, 反思]
+
+  # ============================================================
+  # 10-operations-manual
+  # ============================================================
+  - path: 10-operations-manual/Blender-Daemon架构实施指南.md
+    title: Blender Daemon 架构实施指南
+    level: "★★★"
+    audience: architect
+    abstract: 常驻服务（Daemon）通用架构模式：适用场景、角色定义、参数扩展三机制、进程模型决策框架、容错设计
+    prerequisites:
+      - 01-core-concepts/核心设计原则.md
+    tags: [Daemon, 架构模式, 常驻服务]
+
+  - path: 10-operations-manual/Server合并完整操作指南.md
+    title: Server 合并完整操作指南
+    level: "★★"
+    audience: developer
+    abstract: Server 合并六步 SOP：画通信图、创建目录、导入逻辑、实现编排、MCP 接口、注册测试。含效果评估与常见陷阱
+    prerequisites:
+      - 01-core-concepts/核心设计原则.md
+    tags: [合并, 操作指南, SOP]
+
+  - path: 10-operations-manual/Server测试与调试指南.md
+    title: Server 测试与调试指南
+    level: "★★"
+    audience: developer
+    abstract: CAIAO Server 三层测试金字塔、两种实现测试方法、四种常见调试场景、Bug 模式速查、调试工具清单
+    prerequisites:
+      - 05-dev-guides/创建MCP-Server.md
+      - 05-dev-guides/创建轻量Server.md
+    tags: [测试, 调试, 质量]
+
+  - path: 10-operations-manual/Simplify审查操作指南.md
+    title: Simplify 审查操作指南
+    level: "★★"
+    audience: developer
+    abstract: 四维度（复用/简化/效率/高度）代码审查方法论：扫描清单、执行流程、检查清单
+    prerequisites:
+      - 09-critique-and-reflection/代码审查发现与质量评估.md
+    tags: [审查, 简化, 代码质量]
+
+  - path: 10-operations-manual/新项目CAIAO化启动指南.md
+    title: 新项目 CAIAO 化启动指南
+    level: "★"
+    audience: overview
+    abstract: 从零启动 CAIAO 项目的完整指南：15 分钟初始化、30 分钟第一台 Server、渐进式复杂度路线、六条约定
+    prerequisites:
+      - 01-core-concepts/CAIAO概述.md
+    tags: [入门, 启动, 新项目]
+
+  - path: 10-operations-manual/项目吸收完整操作指南.md
+    title: 项目吸收完整操作指南
+    level: "★★"
+    audience: developer
+    abstract: 将外部项目吸收为 CAIAO Server 的五步 SOP：六维兼容性评估、三种特殊场景模式、吸收前检查清单
+    prerequisites:
+      - 05-dev-guides/蒸馏方法论.md
+    tags: [吸收, 迁移, 兼容性, SOP]
+
+  - path: 10-operations-manual/CAIAO退场机制.md
+    title: CAIAO 退场机制
+    level: "★★"
+    audience: developer
+    abstract: CAIAO 框架的完整退场指南——如何在不破坏已有 Server 的前提下干净移除 CAIAO
+    prerequisites: []
+    tags: [退场, 卸载, 迁移, 解耦]
+
+  # ============================================================
+  # appendix
+  # ============================================================
+  - path: appendix/全部Server清单-参考实现.md
+    title: 全部 Server 清单（参考实现）
+    level: "★"
+    audience: overview
+    abstract: 参考实现的完整 Server 清单（含工具名、引擎、状态）
+    prerequisites: []
+    tags: [附录, Server, 参考]
+
+  - path: appendix/Iron-Fall-项目详情.md
+    title: Iron-Fall 项目详情
+    level: "★"
+    audience: overview
+    abstract: Iron-Fall 前身项目的完整详情（版本、阶段、KPI、数据模型、限制）
+    prerequisites: []
+    tags: [附录, Iron-Fall, 历史]
+
+  - path: appendix/Iron-Fall-迁移映射表.md
+    title: Iron-Fall 迁移映射表
+    level: "★"
+    audience: overview
+    abstract: Iron-Fall 12 个求解器到 CAIAO Server 的完整映射表
+    prerequisites: []
+    tags: [附录, 迁移, 映射]
+
+  - path: appendix/StructureClaw-蒸馏映射表.md
+    title: StructureClaw 蒸馏映射表
+    level: "★"
+    audience: overview
+    abstract: StructureClaw 6 个技能包到 CAIAO Server 的完整蒸馏映射表
+    prerequisites: []
+    tags: [附录, 蒸馏, 映射]
+
+  - path: appendix/代码审查报告-参考实现.md
+    title: 代码审查报告（参考实现）
+    level: "★"
+    audience: overview
+    abstract: 轻量 CAIAO 参考实现的完整代码审查报告（P0-P3 各级问题）
+    prerequisites: []
+    tags: [附录, 代码审查, 参考]
+
+  - path: appendix/Blender-Daemon-实施案例.md
+    title: Blender Daemon 实施案例
+    level: "★"
+    audience: overview
+    abstract: Blender Daemon 架构的完整实施设计（含 7 步计划、bpy API 细节）
+    prerequisites: []
+    tags: [附录, Blender, Daemon]
+
+  - path: appendix/项目时间线.md
+    title: 项目时间线
+    level: "★"
+    audience: overview
+    abstract: 参考实现项目的完整开发时间线与 Server 数量增长记录
+    prerequisites: []
+    tags: [附录, 时间线, 历史]

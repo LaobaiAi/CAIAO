@@ -1,0 +1,17 @@
+[project]
+name = "caiao"
+version = "0.1.0"
+description = "CAIAO — Server-as-atomic-unit framework for tool orchestration"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+caiao = "caiao.cli.main:main"
+
+[project.optional-dependencies]
+cli = ["click>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["caiao*"]

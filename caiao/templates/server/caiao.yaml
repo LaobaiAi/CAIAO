@@ -1,0 +1,25 @@
+name: {{name}}
+version: 0.1.0
+kind: {{kind}}
+description: "TODO: describe this server"
+status: active
+since: "{{date}}"
+start_mode: lazy
+command:
+  python: auto
+  args: ["server.py"]
+  cwd: "."
+  env: {}
+health:
+  timeout_ms: 5000
+  restart_on_crash: false
+  max_restarts: 3
+  health_check_interval_s: 0
+tools:
+  - name: hello
+    description: "A simple greeting tool — replace with your own"
+    tags: [example]
+capabilities: [example]
+dependencies:
+  python: []
+  system: []
