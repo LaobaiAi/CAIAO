@@ -143,7 +143,9 @@ class CAIAOClientHub:
             tools_list = config.get("tools")
             if tools_list and isinstance(tools_list, list):
                 for tool in tools_list:
-                    mapping[tool] = config["name"]
+                    name = tool if isinstance(tool, str) else tool.get("name", "")
+                    if name:
+                        mapping[name] = config["name"]
         return mapping
 
     def _build_semantic_index(self) -> None:
@@ -157,13 +159,15 @@ class CAIAOClientHub:
             _seen.add(name)
         for config in self._server_configs:
             for tool in config.get("tools", []):
-                if tool not in _seen:
-                    desc = config.get("description", "")
-                    keywords = tokenize(f"{tool} {desc}")
-                    self._semantic_index.append({
-                        "name": tool, "keywords": keywords, "description": desc,
-                    })
-                    _seen.add(tool)
+                tool_name = tool if isinstance(tool, str) else tool.get("name", "")
+                if not tool_name or tool_name in _seen:
+                    continue
+                desc = config.get("description", "")
+                keywords = tokenize(f"{tool_name} {desc}")
+                self._semantic_index.append({
+                    "name": tool_name, "keywords": keywords, "description": desc,
+                })
+                _seen.add(tool_name)
 
     async def start_all(self) -> None:
         for config in self._server_configs:
