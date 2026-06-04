@@ -60,17 +60,17 @@ CAIAO 继承玄武的特性——**沉静、深邃、不可动摇**。Server 进
 你的项目里有一堆求解器、工具、外部能力——结构分析、物理模拟、AI 推理、3D 渲染。每个都是一个 **CAIAO Server**，一个独立的进程，通过 stdio 与 **Hub** 通信。Hub 负责发现、路由、生命周期管理。加一个新能力 = 写一个 Server 文件 + 注册，核心代码零改动。
 
 ```
-                    ┌──────────────────────────────────┐
-                    │             CAIAO Hub            │
-                    │   discover · route · lifecycle   │
-                    └────┬────────────┬───────────┬────┘
-                         │            │           │
-                    ┌────▼───┐  ┌─────▼────┐  ┌───▼────┐
-                    │ Solver │  │ Renderer │  │ GenAI  │
-                    │ Server │  │  Server  │  │ Server │
-                    └────────┘  └──────────┘  └────────┘
-                      stdio         stdio        stdio
-                    (独立进程)    (独立进程)    (独立进程)
+                            ┌──────────────────────────────────┐
+                            │             CAIAO Hub            │
+                            │   discover · route · lifecycle   │
+                            └────┬────────────┬───────────┬────┘
+                                │            │           │
+                            ┌────▼───┐  ┌─────▼────┐  ┌───▼────┐
+                            │ Solver │  │ Renderer │  │ GenAI  │
+                            │ Server │  │  Server  │  │ Server │
+                            └────────┘  └──────────┘  └────────┘
+                              stdio         stdio        stdio
+                            (独立进程)    (独立进程)    (独立进程)
 ```
 
 **Server 之间完全隔离**——一个崩溃不影响其他。**框架不绑定 Server**——每个 Server 是标准 MCP Server，从 `mcp.server` 导入，不从 `caiao` 导入。不想要框架了？卸载它，你的 Server 继续工作。
@@ -159,7 +159,9 @@ AI 可读索引 → [`MANIFEST.yaml`](docs/MANIFEST.yaml)
 | [03 — Server 目录](docs/03-server-catalog/) | Server 种类 · 设计模式 · 可复用代码模式 |
 | [04 — caiao.yaml 系统](docs/04-caiao-yaml-system/) | 声明式清单规范 |
 | [05 — 开发指南](docs/05-dev-guides/) | 创建 Server · 蒸馏方法论 · 前端集成 · System Prompt 设计 |
+| [06 — Iron-Fall 迁移参考](docs/06-iron-fall-reference/) | 迁移案例 · 蒸馏源参考 · 迁移路径 |
 | [07 — 协议参考](docs/07-protocol-reference/) | 规范 v1.0 · stdio 协议 · 契约规则 |
+| [08 — 演进历史](docs/08-evolution-history/) | 设计演进 · 关键决策 · 合并路线图 |
 | [09 — 批判与反思](docs/09-critique-and-reflection/) | 已知局限 · 设计反思 · 代码审查框架 |
 | [10 — 操作手册](docs/10-operations-manual/) | 合并 · 测试 · 调试 · 审查 · 吸收 · **退场机制** |
 
