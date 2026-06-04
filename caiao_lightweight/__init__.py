@@ -16,8 +16,8 @@ Usage:
     result = hub.call_tool("do_work", {})
 """
 
-from .server import CAIAOServer, tool
 from .hub import Hub
+from .server import CAIAOServer, tool
 from .subprocess import SubprocessManager
 
 __all__ = ["CAIAOServer", "tool", "Hub", "SubprocessManager"]

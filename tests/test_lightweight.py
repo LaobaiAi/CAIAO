@@ -1,7 +1,8 @@
 """Tests for CAIAO lightweight path — in-process Server and Hub."""
 import json
-from caiao_lightweight.server import CAIAOServer, tool
+
 from caiao_lightweight.hub import Hub
+from caiao_lightweight.server import CAIAOServer, tool
 
 
 class TestLightweightServer:

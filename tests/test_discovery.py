@@ -2,8 +2,10 @@
 import os
 import sys
 import tempfile
+
 import yaml
-from caiao.discovery import resolve_venv_python, discover_server_configs
+
+from caiao.discovery import discover_server_configs, resolve_venv_python
 
 
 class TestResolveVenvPython:

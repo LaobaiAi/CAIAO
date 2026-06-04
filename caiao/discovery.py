@@ -1,6 +1,6 @@
+import logging
 import os
 import sys
-import logging
 from collections.abc import Callable
 from typing import Any
 
@@ -23,7 +23,8 @@ def _default_venv_candidates(project_dir: str | None = None) -> list[str]:
     if project_dir:
         for venv_name in (".venv", "venv"):
             for scripts_dir in ("Scripts", "bin"):
-                p = os.path.join(project_dir, venv_name, scripts_dir, "python.exe" if scripts_dir == "Scripts" else "python")
+                python_exe = "python.exe" if scripts_dir == "Scripts" else "python"
+                p = os.path.join(project_dir, venv_name, scripts_dir, python_exe)
                 candidates.append(p)
     return candidates
 

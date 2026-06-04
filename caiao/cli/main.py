@@ -8,8 +8,8 @@ Usage:
     caiao doctor
 """
 
-import sys
 import os
+import sys
 
 
 def main():
@@ -173,7 +173,10 @@ def _cmd_doctor():
     cwd = os.getcwd()
     servers_dir = os.path.join(cwd, "servers")
     if os.path.isdir(servers_dir):
-        count = len([e for e in os.scandir(servers_dir) if e.is_dir() and not e.name.startswith("_") and not e.name.startswith(".")])
+        count = len([
+            e for e in os.scandir(servers_dir)
+            if e.is_dir() and not e.name.startswith("_") and not e.name.startswith(".")
+        ])
         print(f"Servers directory: {servers_dir} ({count} servers)")
     else:
         print(f"Servers directory: NOT FOUND (expected at {servers_dir})")
@@ -239,7 +242,17 @@ server = Server("{name}")
 
 @server.list_tools()
 async def list_tools() -> list[Tool]:
-    return [Tool(name="hello", description="A simple greeting tool", inputSchema={{"type":"object","properties":{{"name":{{"type":"string","description":"Name to greet"}}}},"required":[]}})]
+    return [Tool(
+        name="hello",
+        description="A simple greeting tool",
+        inputSchema={
+            "type": "object",
+            "properties": {
+                "name": {"type": "string", "description": "Name to greet"},
+            },
+            "required": [],
+        },
+    )]
 
 @server.call_tool()
 async def call_tool(name: str, arguments: dict) -> list[TextContent]:

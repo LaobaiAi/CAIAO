@@ -9,9 +9,9 @@ See https://github.com/.../caiao for documentation.
 
 __version__ = "0.1.0"
 
-from .hub import CAIAOClientHub
-from .discovery import discover_server_configs, resolve_venv_python
 from ._parallel import get_parallel_limit
+from .discovery import discover_server_configs, resolve_venv_python
+from .hub import CAIAOClientHub
 
 __all__ = [
     "CAIAOClientHub",

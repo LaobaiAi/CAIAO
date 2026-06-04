@@ -161,4 +161,9 @@ if __name__ == "__main__":
     # If run directly: python my_server.py [--stdio]
     # --stdio mode: JSON-line protocol over stdin/stdout (for SubprocessManager)
     # CLI mode: arguments-driven (for manual testing)
-    print(json.dumps({"error": "This file is a library. Create your own server.py that subclasses CAIAOServer and handles __main__."}))
+    print(json.dumps({
+        "error": (
+            "This file is a library. Create your own server.py that subclasses"
+            " CAIAOServer and handles __main__."
+        ),
+    }))

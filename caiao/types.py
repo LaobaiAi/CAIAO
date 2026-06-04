@@ -1,4 +1,4 @@
-from typing import TypedDict, NotRequired, Any
+from typing import Any, NotRequired, TypedDict
 
 
 class ServerConfig(TypedDict):

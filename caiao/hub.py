@@ -3,21 +3,28 @@
 import asyncio
 import json
 import logging
-import os
 import time
 from collections.abc import Callable
 from typing import Any
 
-from mcp.client.stdio import stdio_client, StdioServerParameters
 from mcp.client.session import ClientSession
+from mcp.client.stdio import StdioServerParameters, stdio_client
 
-from ._state import (
-    STATE_COMPOSITE, STATE_HIBERNATING, STATE_REGISTERED, STATE_STARTING,
-    STATE_RUNNING, STATE_CRASHED, STATE_STOPPED, STATE_ARCHIVED,
-    PIPELINE_COMPLETE, PIPELINE_PARTIAL, GATEWAY_SERVER,
-)
 from ._parallel import get_parallel_limit
-from ._semantic import tokenize, semantic_search
+from ._semantic import semantic_search, tokenize
+from ._state import (
+    GATEWAY_SERVER,
+    PIPELINE_COMPLETE,
+    PIPELINE_PARTIAL,
+    STATE_ARCHIVED,
+    STATE_COMPOSITE,
+    STATE_CRASHED,
+    STATE_HIBERNATING,
+    STATE_REGISTERED,
+    STATE_RUNNING,
+    STATE_STARTING,
+    STATE_STOPPED,
+)
 
 logger = logging.getLogger(__name__)
 

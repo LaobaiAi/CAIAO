@@ -101,7 +101,8 @@ class TestSemanticSearch:
     def test_semantic_similarity(self):
         index = [
             {"name": "adder", "keywords": tokenize("adder add sum total plus"), "description": "Adds numbers"},
-            {"name": "multiplier", "keywords": tokenize("multiplier multiply product times"), "description": "Multiplies numbers"},
+            {"name": "multiplier", "keywords": tokenize("multiplier multiply product times"),
+             "description": "Multiplies numbers"},
         ]
         result = semantic_search("add", index)
         assert result is not None
