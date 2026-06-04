@@ -15,7 +15,6 @@ Usage (subprocess):
     result = hub.call_tool("solve", {"input": 42})
 """
 
-import json
 import logging
 from typing import Any
 

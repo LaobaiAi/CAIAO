@@ -1,7 +1,8 @@
 """Tests for CAIAO Hub (MCP SDK path) — local tools, pipelines, metrics."""
 import pytest
+
+from caiao._state import GATEWAY_SERVER, PIPELINE_COMPLETE
 from caiao.hub import CAIAOClientHub
-from caiao._state import PIPELINE_COMPLETE, PIPELINE_PARTIAL, GATEWAY_SERVER
 
 
 @pytest.fixture

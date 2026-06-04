@@ -1,6 +1,5 @@
 """Tests for CAIAO semantic routing module."""
-import pytest
-from caiao._semantic import tokenize, jaccard_similarity, ngram_similarity, semantic_search
+from caiao._semantic import jaccard_similarity, ngram_similarity, semantic_search, tokenize
 
 
 class TestTokenize:

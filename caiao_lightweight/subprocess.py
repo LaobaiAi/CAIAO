@@ -7,7 +7,6 @@ Each request is a single JSON line; each response is a single JSON line.
 import json
 import logging
 import subprocess
-import time
 from typing import Any
 
 logger = logging.getLogger(__name__)

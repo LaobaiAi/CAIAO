@@ -2,7 +2,8 @@
 import os
 import sys
 import tempfile
-from caiao.cli.main import main, _print_usage
+
+from caiao.cli.main import main
 
 
 class TestCLIUsage:
