@@ -97,13 +97,18 @@ hub.register(Calculator())
 hub.call_tool("add", {"a": 3, "b": 4})  # → {"result": 7}
 ```
 
-### MCP SDK Path — install from GitHub, CLI project scaffolding
+### MCP SDK Path — install from PyPI, CLI project scaffolding
 
 ```bash
-pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"
+pip install caiao
 caiao init my-project
 cd my-project && caiao new server my-solver
 ```
+
+> 💡 If `caiao` command is not found after `pip install`, use `python -m caiao` instead, or install with `pipx`:
+> ```bash
+> pip install pipx && pipx install caiao
+> ```
 
 ---
 
@@ -113,7 +118,7 @@ cd my-project && caiao new server my-solver
 
 |                     | MCP SDK                               | Lightweight                          |
 | ------------------- | ------------------------------------- | ------------------------------------ |
-| **Get it**          | `pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"` | Copy `server.py` `hub.py` `subprocess.py` |
+| **Get it**          | `pip install caiao` | Copy `server.py` `hub.py` `subprocess.py` |
 | **Dependencies**    | `mcp>=1.0.0`                          | Python stdlib only                   |
 | **Mode**            | Async · `asyncio` full lifecycle      | Sync · in-process or subprocess      |
 | **Best for**        | Production platforms, team projects, AI ecosystem | Embedded Python · Prototypes · CLI tools |

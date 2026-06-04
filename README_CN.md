@@ -99,13 +99,18 @@ hub.register(Calculator())
 hub.call_tool("add", {"a": 3, "b": 4})  # → {"result": 7}
 ```
 
-### MCP SDK 路径 — 从 GitHub 安装，CLI 生成项目骨架
+### MCP SDK 路径 — 从 PyPI 安装，CLI 生成项目骨架
 
 ```bash
-pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"
+pip install caiao
 caiao init my-project
 cd my-project && caiao new server my-solver
 ```
+
+> 💡 如果 `caiao` 命令找不到，用 `python -m caiao` 代替，或用 `pipx` 安装：
+> ```bash
+> pip install pipx && pipx install caiao
+> ```
 
 ---
 
@@ -115,7 +120,7 @@ cd my-project && caiao new server my-solver
 
 |                     | MCP SDK                               | Lightweight                          |
 | ------------------- | ------------------------------------- | ------------------------------------ |
-| **获取**            | `pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"` | 复制 `server.py` `hub.py` `subprocess.py` |
+| **获取**            | `pip install caiao` | 复制 `server.py` `hub.py` `subprocess.py` |
 | **依赖**            | `mcp>=1.0.0`                          | Python 标准库                        |
 | **模式**            | 异步 · `asyncio` 完整生命周期         | 同步 · 进程内直调或子进程            |
 | **适用**            | 生产平台 · 团队协作 · AI 生态互通     | 嵌入式 Python · 原型 · CLI 工具      |
