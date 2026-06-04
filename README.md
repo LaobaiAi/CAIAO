@@ -1,77 +1,85 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/CAIAO-v0.1.0-1a1a2e?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjx0ZXh0IHg9IjEyIiB5PSIxNyIgdGV4dC1hbmtvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSI+4p2kPC90ZXh0Pjwvc3ZnPg==">
-  <img src="https://img.shields.io/badge/python-≥3.11-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/CAIAO-v0.1.0-1a1a2e?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjx0ZXh0IHg9IjEyIiB5PSIxNyIgdGV4dC1hbmNvcj0ibWlkZGxlIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSI+4p2kPC90ZXh0Pjwvc3ZnPg==">
+  <img src="https://img.shields.io/badge/python-%E2%89%A53.11-3776AB?style=for-the-badge&logo=python&logoColor=white">
   <img src="https://img.shields.io/badge/license-MIT-97ca00?style=for-the-badge">
-  <img src="https://img.shields.io/badge/MCP-1.0+-ff6b6b?style=for-the-badge">
+  <img src="https://img.shields.io/badge/MCP-1.0%2B-ff6b6b?style=for-the-badge">
 </p>
 
 <p align="center">
-  <samp>每个求解器都是一个独立的 Server · Hub 自动发现与路由 · 框架可随时移除，Server 不受影响</samp>
+  <samp>Every solver is an independent Server · Hub auto-discovers and routes · Framework is removable, Servers are not</samp>
 </p>
-
----
 
 <p align="center">
-  <a href="https://github.com/LaobaiAi/CAIAO/blob/main/docs/README.md"><b>📖 中文文档</b></a> ·
-  <a href="#-quickstart"><b>⚡ 快速开始</b></a> ·
-  <a href="#-two-paths"><b>🔀 两条路径</b></a> ·
-  <a href="#-philosophy"><b>🧠 设计哲学</b></a> ·
-  <a href="#-documentation"><b>📚 文档索引</b></a>
+  <a href="#-四象-four-symbols-ai-system"><b>四象</b></a>
+  ·
+  <a href="#-what-is-caiao"><b>What is CAIAO</b></a>
+  ·
+  <a href="#-quickstart"><b>Quickstart</b></a>
+  ·
+  <a href="#-two-paths"><b>Two Paths</b></a>
+  ·
+  <a href="#-philosophy"><b>Philosophy</b></a>
+  ·
+  <a href="#-documentation"><b>Docs</b></a>
+  ·
+  <a href="README_CN.md"><b>📖 中文 →</b></a>
 </p>
 
 ---
 
-## What is CAIAO
+<h2 align="center">🐢 四象 · Four Symbols AI System</h2>
 
-**CAIAO** 是一个 Server 即原子单元的工具编排框架。
-
-你的项目里有一堆求解器、工具、外部能力——结构分析、物理模拟、AI 推理、3D 渲染。每个都是一个 CAIAO Server，一个独立的进程，通过 stdio 与 Hub 通信。Hub 负责发现、路由、生命周期管理。加一个新能力 = 写一个 Server 文件 + 注册，核心代码零改动。
-
-```
-                    ┌──────────────────────────────────┐
-                    │           CAIAO Hub              │
-                    │   discover · route · lifecycle   │
-                    └────┬───────┬───────┬────────────┘
-                         │       │       │
-                   ┌─────▼──┐ ┌─▼──────┐ ┌▼──────────┐
-                   │ Solver │ │ GenAI  │ │  Renderer  │
-                   │ Server │ │ Server │ │  Server    │
-                   └────────┘ └───────┘ └────────────┘
-                      stdio      stdio       stdio
-                    (独立进程)  (独立进程)   (独立进程)
-```
-
-**Server 之间完全隔离**——一个崩溃不影响其他。**框架不绑定 Server**——每个 Server 是标准 MCP Server，框架代码从 `mcp.server` 导入，不从 `caiao` 导入。不想要框架了？卸载它，你的 Server 继续工作。
-
----
-
-## 🐢 四象 AI 体系
-
-CAIAO 是**四象 AI 体系**的玄武之器——渊默之算，承载复杂仿真与结构分析。
+<p align="center">
+  <b>CAIAO</b> is the <b>Black Tortoise (玄武)</b> of the Four Symbols AI System —<br>
+  <i>abyssal computation, bearing complex analysis</i>.
+</p>
 
 ```
 四象 AI · Four Symbols AI System
-├── 🐉 青龙 QinglongAI  ·  木  ·  仁  ·  生成与创作
-├── 🦚 朱雀 ZhuqueAI  ·  火  ·  礼  ·  交互与对话
-├── 🐅 白虎 BaihuAI    ·  金  ·  义  ·  决策与优化
-└── 🐢 玄武 XuanwuAI  ·  水  ·  智  ·  渊默之算（CAIAO 所在）
+├── 🐉 青龙 QinglongAI  ·  Wood  (木)  ·  Benevolence   (仁)  ·  Generation & Creation
+├── 🦚 朱雀 ZhuqueAI    ·  Fire  (火)  ·  Propriety     (礼)  ·  Interaction & Dialogue
+├── 🐅 白虎 BaihuAI     ·  Metal (金)  ·  Righteousness (义)  ·  Decision & Optimization
+└── 🐢 玄武 XuanwuAI    ·  Water (水)  ·  Wisdom        (智)  ·  Abyssal Computation
+                                                                    └─  CAIAO — here
 ```
 
-CAIAO 继承玄武的特性——**沉静、深邃、不可动摇**。Server 进程像龟甲般独立隔离，Hub 如灵蛇般在 Server 之间穿行调度。框架本身保持最小体量，让使用者的领域能力成为主体。
+CAIAO inherits the nature of the **Black Tortoise** — *still, deep, unshakable*. Each Server process is isolated like the tortoise's shell, while the Hub navigates between them like a serpent. The framework stays minimal — your domain logic is the true body.
 
-> *"渊默之算"（Abyssal Computation）—— 不喧哗，不浮夸，在深处运行，在关键时刻给出答案。*
+> **"渊默之算" (Abyssal Computation)** — *No clamor, no fanfare. It computes in the depths and delivers answers at the critical moment.*
 
 ---
 
-## 🌐 Language / 语言
+## 🐢 What is CAIAO
 
-README and code are bilingual (EN/中文). Full documentation → [`docs/`](docs/README.md) is in **Chinese** with English abstracts in each file's frontmatter. English translation contributions welcome.
+<a href="docs/01-core-concepts/CAIAO概述.md"><b>什么是CAIAO →</b></a>
+
+**CAIAO** is a Server-as-atomic-unit framework for tool orchestration.
+
+Your project has a set of solvers, tools, and external capabilities — structural analysis, physics simulation, AI inference, 3D rendering. Each is a **CAIAO Server**: an independent process communicating with the **Hub** via stdio. The Hub handles discovery, routing, and lifecycle management. Adding a new capability = writing one Server file + registering it — zero changes to core code.
+
+```
+                    ┌──────────────────────────────────┐
+                    │             CAIAO Hub            │
+                    │   discover · route · lifecycle   │
+                    └────┬────────────┬───────────┬────┘
+                         │            │           │
+                    ┌────▼───┐  ┌─────▼────┐  ┌───▼────┐
+                    │ Solver │  │ Renderer │  │ GenAI  │
+                    │ Server │  │  Server  │  │ Server │
+                    └────────┘  └──────────┘  └────────┘
+                      stdio         stdio        stdio
+                    (独立进程)    (独立进程)    (独立进程)
+```
+
+**Servers are fully isolated** — one crash never affects another. **The framework does not bind Servers** — every Server is a standard MCP Server, importing from `mcp.server`, not from `caiao`. Don't want the framework? Uninstall it. Your Servers keep running.
 
 ---
 
 ## ⚡ Quickstart
 
-**轻量路径** — 复制三个文件，零安装，十行代码跑起来：
+<a href="docs/02-two-implementations/轻量实现（钢框架设计）.md"><b>⚡ 快速开始 →</b></a>
+
+### Lightweight Path — 3 files, zero install, 10 lines
 
 ```python
 from server import CAIAOServer, tool
@@ -89,7 +97,7 @@ hub.register(Calculator())
 hub.call_tool("add", {"a": 3, "b": 4})  # → {"result": 7}
 ```
 
-**MCP SDK 路径** — 从 GitHub 安装，CLI 生成项目骨架：
+### MCP SDK Path — install from GitHub, CLI project scaffolding
 
 ```bash
 pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"
@@ -101,57 +109,65 @@ cd my-project && caiao new server my-solver
 
 ## 🔀 Two Paths
 
-|  | MCP SDK | Lightweight |
-|---|---|---|
-| **获取** | `pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"` | 复制 `server.py` `hub.py` `subprocess.py` 三个文件 |
-| **依赖** | `mcp>=1.0.0` | Python 标准库 |
-| **模式** | 异步 · `asyncio` 完整生命周期 | 同步 · 进程内直调或子进程 |
-| **适用** | 产品平台 · 团队协作 · AI 生态互通 | 嵌入式 Python · 原型 · CLI 工具 |
+<a href="docs/02-two-implementations/适用场景对比与选择指南.md"><b>🔀 两种路径对比 →</b></a>
 
-**轻量不是简化版，是独立的架构选择。** 先轻量起步，需要 AI 生态互通时切换到 MCP SDK——换 10 行通信代码，业务逻辑零改动。
+|                     | MCP SDK                               | Lightweight                          |
+| ------------------- | ------------------------------------- | ------------------------------------ |
+| **Get it**          | `pip install "git+https://github.com/LaobaiAi/CAIAO.git#subdirectory=caiao"` | Copy `server.py` `hub.py` `subprocess.py` |
+| **Dependencies**    | `mcp>=1.0.0`                          | Python stdlib only                   |
+| **Mode**            | Async · `asyncio` full lifecycle      | Sync · in-process or subprocess      |
+| **Best for**        | Production platforms, team projects, AI ecosystem | Embedded Python · Prototypes · CLI tools |
+
+**Lightweight is not a simplified version — it is an independent architectural choice.** Start lightweight; switch to MCP SDK when AI ecosystem interoperability is needed — replace 10 lines of communication code, zero changes to business logic.
 
 ---
 
 ## 🧠 Philosophy
 
-```
-Server = 最小可部署单元
-├── 独立进程，崩溃隔离
-├── 零间接依赖，仅依赖 mcp.server
-├── 无状态：输入 → 计算 → 输出
-└── 可组合：高频调用序列 → 合并为新 Server（不修改源 Server）
+<a href="docs/01-core-concepts/核心设计原则.md"><b>🧠 设计哲学 →</b></a>
 
-Hub = 编排层，不是依赖
-├── 自动发现（caiao.yaml）
-├── 惰性启动（按需 spawn）
-├── 语义路由（工具名模糊匹配）
-└── 可随时移除，Server 不受影响
+```
+Server = Smallest Deployable Unit
+├── Independent process, crash isolation
+├── Zero transitive dependencies, only depends on mcp.server
+├── Stateless: input → compute → output
+└── Composable: frequent call sequences → merge into a new Server (original untouched)
+
+Hub = Orchestration layer, not a dependency
+├── Auto-discovery (caiao.yaml)
+├── Lazy start (spawn on demand)
+├── Semantic routing (fuzzy tool name matching)
+└── Removable at any time — Servers unaffected
 ```
 
-**四项核心原则：** Server 独立性 · 原子单元 · 合并不修改 · 按 ROI 提取共享逻辑
+**Four core principles:** Server independence · Atomic unit · Merge without modification · Extract shared logic by ROI
 
 ---
 
 ## 📚 Documentation
 
-完整中文知识库 → [`docs/`](docs/README.md) · AI 可读索引 → [`MANIFEST.yaml`](docs/MANIFEST.yaml)
+<a href="docs/README.md"><b>📚 完整文档库 →</b></a>
 
-| 章节 | 内容 |
-|------|------|
-| [01-核心概念](docs/01-core-concepts/) | CAIAO 是什么 · 与 MCP 的关系 · 设计原则 |
-| [02-两种实现](docs/02-two-implementations/) | MCP SDK vs 轻量 · 选择指南 · 独特优势 |
-| [03-Server 目录](docs/03-server-catalog/) | Server 种类 · 设计模式 · 可复用代码模式 |
-| [04-清单系统](docs/04-caiao-yaml-system/) | caiao.yaml 声明式规范 |
-| [05-开发指南](docs/05-dev-guides/) | 创建 Server · 蒸馏方法论 · 前端集成 · System Prompt 设计 |
-| [07-协议参考](docs/07-protocol-reference/) | 正式规范 v1.0 · stdio 通信协议 · 契约规则 |
-| [09-批判与反思](docs/09-critique-and-reflection/) | 已知局限 · 设计反思 · 代码审查框架 |
-| [10-操作手册](docs/10-operations-manual/) | 合并 · 测试 · 调试 · 审查 · 吸收 · **退场机制** |
+Full Chinese knowledge base → [`docs/`](docs/README.md) · AI-readable index → [`MANIFEST.yaml`](docs/MANIFEST.yaml)
+
+| Section | Content |
+|---------|---------|
+| [01 — Core Concepts](docs/01-core-concepts/) <a href="docs/01-core-concepts/CAIAO概述.md"><sub>核心概念</sub></a> | What is CAIAO · Relationship with MCP · Design principles |
+| [02 — Two Implementations](docs/02-two-implementations/) <a href="docs/02-two-implementations/适用场景对比与选择指南.md"><sub>两种实现</sub></a> | MCP SDK vs Lightweight · Selection guide · Unique advantages |
+| [03 — Server Catalog](docs/03-server-catalog/) <a href="docs/03-server-catalog/全部Server清单.md"><sub>Server目录</sub></a> | Server types · Design patterns · Reusable code patterns |
+| [04 — caiao.yaml System](docs/04-caiao-yaml-system/) <a href="docs/04-caiao-yaml-system/清单规范.md"><sub>清单系统</sub></a> | Declarative manifest specification |
+| [05 — Dev Guides](docs/05-dev-guides/) <a href="docs/05-dev-guides/创建MCP-Server.md"><sub>开发指南</sub></a> | Creating Servers · Distillation methodology · Frontend integration · System Prompt design |
+| [07 — Protocol Reference](docs/07-protocol-reference/) <a href="docs/07-protocol-reference/CAIAO-Server规范v1.0-正式版.md"><sub>协议参考</sub></a> | Specification v1.0 · stdio protocol · Contract rules |
+| [09 — Critique & Reflection](docs/09-critique-and-reflection/) <a href="docs/09-critique-and-reflection/反思与改进方向.md"><sub>批判与反思</sub></a> | Known limitations · Design reflections · Code review framework |
+| [10 — Operations Manual](docs/10-operations-manual/) <a href="docs/10-operations-manual/Server合并完整操作指南.md"><sub>操作手册</sub></a> | Merge · Test · Debug · Review · Absorb · **Exit mechanism** |
 
 ---
 
 ## 🛡️ Exit Mechanism
 
-CAIAO 设计为**可随时移除**。每个 Server 从 `mcp.server` 导入，不从 `caiao` 导入。卸载框架 → 替换 Hub 调用为直接 MCP Session → Server 零改动继续运行。详见 [`退场机制`](docs/10-operations-manual/CAIAO退场机制.md)。
+<a href="docs/10-operations-manual/CAIAO退场机制.md"><b>🛡️ 退场机制 →</b></a>
+
+CAIAO is designed to be **fully removable**. Every Server imports from `mcp.server`, not from `caiao`. Uninstall the framework → replace Hub calls with direct MCP Sessions → your Servers run unchanged. See [`退场机制`](docs/10-operations-manual/CAIAO退场机制.md) for details.
 
 ---
 
@@ -159,17 +175,18 @@ CAIAO 设计为**可随时移除**。每个 Server 从 `mcp.server` 导入，不
 
 ```
 CAIAO/
-├── caiao/                 MCP SDK 包
-├── caiao_lightweight/     零依赖 · 三文件复制即用
-├── docs/                  完整知识库
-└── README.md             ← 你在这里
+├── caiao/                 MCP SDK package
+├── caiao_lightweight/     Zero-dependency, 3 files copy-and-run
+├── docs/                  Full knowledge base (中文)
+├── README.md             English
+└── README_CN.md          中文
 ```
 
 ### Requirements
 
 - Python ≥ 3.11
-- MCP SDK: `pip install mcp`
-- Lightweight: 纯标准库
+- MCP SDK path: `pip install mcp`
+- Lightweight path: Python stdlib only
 
 ### License
 
