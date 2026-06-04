@@ -50,6 +50,8 @@ class SubprocessManager:
         if payload is not None:
             request["params"] = payload
         line = json.dumps(request) + "\n"
+        assert self._process is not None and self._process.stdin is not None
+        assert self._process.stdout is not None
         self._process.stdin.write(line)
         self._process.stdin.flush()
         response_line = self._process.stdout.readline()
@@ -77,8 +79,10 @@ class SubprocessManager:
         if self._process is None:
             return
         try:
-            self._process.stdin.close()
-            self._process.stdout.close()
+            if self._process.stdin:
+                self._process.stdin.close()
+            if self._process.stdout:
+                self._process.stdout.close()
             self._process.terminate()
             self._process.wait(timeout=5)
         except subprocess.TimeoutExpired:

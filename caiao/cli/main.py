@@ -257,8 +257,9 @@ async def list_tools() -> list[Tool]:
 @server.call_tool()
 async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     if name == "hello":
-        return [TextContent(type="text", text=json.dumps({{"greeting":f"Hello, {{arguments.get('name','world')}}!"}}))]
-    return [TextContent(type="text", text=json.dumps({{"error":f"Unknown tool: {{name}}"}}))]
+        return [TextContent(type="text", text=json.dumps(
+            {{"greeting": "Hello, " + str(arguments.get("name", "world")) + "!"}}))]
+    return [TextContent(type="text", text=json.dumps({{"error": "Unknown tool: " + str(name)}}))]
 
 async def main():
     async with stdio_server() as (read, write):

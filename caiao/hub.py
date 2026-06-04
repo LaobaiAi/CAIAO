@@ -293,6 +293,7 @@ class CAIAOClientHub:
                 suggestions = f" Did you mean '{match['name']}'?" if match else ""
                 return {"error": f"Tool '{tool_name}' not found.{suggestions}"}
             server_name = self._tool_registry.get(tool_name)
+        assert server_name is not None, f"Server for '{tool_name}' should be registered"
         session = self._sessions.get(server_name)
         if session is None:
             return {"error": f"Server '{server_name}' is not connected"}

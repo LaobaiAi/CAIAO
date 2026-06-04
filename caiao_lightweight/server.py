@@ -28,7 +28,7 @@ def tool(func: Callable) -> Callable:
 
     The decorated method should accept a single dict argument and return a dict.
     """
-    func._is_caiao_tool = True
+    setattr(func, "_is_caiao_tool", True)
     return func
 
 

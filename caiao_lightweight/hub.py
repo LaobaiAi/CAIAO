@@ -21,7 +21,7 @@ from typing import Any
 try:
     from .subprocess import SubprocessManager
 except ImportError:
-    from subprocess import SubprocessManager
+    from subprocess import SubprocessManager  # type: ignore[no-redef, attr-defined]
 
 logger = logging.getLogger(__name__)
 

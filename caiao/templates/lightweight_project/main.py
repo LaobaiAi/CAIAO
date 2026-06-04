@@ -21,7 +21,7 @@ sys.path.insert(0, PROJECT_DIR)
 try:
     from server import CAIAOServer, tool
     from hub import Hub
-    from subprocess import SubprocessManager
+    from subprocess import SubprocessManager  # type: ignore[no-redef, attr-defined]
 except ImportError:
     print("CAIAO lightweight files not found.")
     print("Copy server.py, hub.py, subprocess.py from caiao_lightweight/ to this directory.")
