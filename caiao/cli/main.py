@@ -230,8 +230,7 @@ def _write_server_template(target_dir: str, name: str, kind: str) -> None:
 
 def _write_server_template_inline(target_dir: str, name: str, kind: str) -> None:
     server_py = os.path.join(target_dir, "server.py")
-    with open(server_py, "w", encoding="utf-8") as f:
-        f.write(f'''"""CAIAO Server: {name}"""
+    template = '''"""CAIAO Server: {name}"""
 import asyncio, json, logging
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
@@ -258,8 +257,8 @@ async def list_tools() -> list[Tool]:
 async def call_tool(name: str, arguments: dict) -> list[TextContent]:
     if name == "hello":
         return [TextContent(type="text", text=json.dumps(
-            {{"greeting": "Hello, " + str(arguments.get("name", "world")) + "!"}}))]
-    return [TextContent(type="text", text=json.dumps({{"error": "Unknown tool: " + str(name)}}))]
+            {"greeting": "Hello, " + str(arguments.get("name", "world")) + "!"}))]
+    return [TextContent(type="text", text=json.dumps({"error": "Unknown tool: " + str(name)}))]
 
 async def main():
     async with stdio_server() as (read, write):
@@ -267,7 +266,9 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-''')
+'''
+    with open(server_py, "w", encoding="utf-8") as f:
+        f.write(template.replace("{name}", name))
 
     caiao_yaml = os.path.join(target_dir, "caiao.yaml")
     with open(caiao_yaml, "w", encoding="utf-8") as f:
