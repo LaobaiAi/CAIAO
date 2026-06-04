@@ -64,7 +64,7 @@ CAIAO 继承玄武的特性——**沉静、深邃、不可动摇**。Server 进
                             │             CAIAO Hub            │
                             │   discover · route · lifecycle   │
                             └────┬────────────┬───────────┬────┘
-                                │            │           │
+                                 │            │           │
                             ┌────▼───┐  ┌─────▼────┐  ┌───▼────┐
                             │ Solver │  │ Renderer │  │ GenAI  │
                             │ Server │  │  Server  │  │ Server │

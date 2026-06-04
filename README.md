@@ -62,7 +62,7 @@ Your project has a set of solvers, tools, and external capabilities — structur
                             │             CAIAO Hub            │
                             │   discover · route · lifecycle   │
                             └────┬────────────┬───────────┬────┘
-                                │            │           │
+                                 │            │           │
                             ┌────▼───┐  ┌─────▼────┐  ┌───▼────┐
                             │ Solver │  │ Renderer │  │ GenAI  │
                             │ Server │  │  Server  │  │ Server │
