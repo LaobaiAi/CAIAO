@@ -165,8 +165,8 @@ def _cmd_doctor():
     print(f"Executable: {sys.executable}")
 
     try:
-        import mcp
-        print(f"MCP SDK: available")
+        import mcp  # noqa: F401 — used to check availability
+        print("MCP SDK: available")
     except ImportError:
         print("MCP SDK: NOT INSTALLED (pip install mcp)")
 
