@@ -8,9 +8,10 @@ version = "1.0.2"
 description = "CAIAO — Server-as-atomic-unit framework for tool orchestration"
 readme = "README.md"
 license = "MIT"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 dependencies = [
     "mcp>=1.0.0",
+    "typing-extensions>=4.0; python_version < '3.11'",
 ]
 
 [project.urls]
