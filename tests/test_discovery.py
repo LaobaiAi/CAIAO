@@ -4,7 +4,6 @@ import sys
 import tempfile
 
 import yaml
-
 from caiao.discovery import discover_server_configs, resolve_venv_python
 
 
