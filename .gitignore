@@ -37,3 +37,13 @@ htmlcov/
 
 # Project specific
 *.log
+
+# Node.js
+node_modules/
+*.map
+
+# Frontend build
+visual_platform/frontend/dist/
+
+# Temp docs
+docs/CAIAO_Visual_Orchestration_Feasibility_Analysis.md
