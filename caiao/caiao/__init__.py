@@ -7,7 +7,7 @@ Two implementation paths:
 See https://github.com/.../caiao for documentation.
 """
 
-__version__ = "0.1.0"
+__version__ = "1.0.3"
 
 from ._parallel import get_parallel_limit
 from .discovery import discover_server_configs, resolve_venv_python

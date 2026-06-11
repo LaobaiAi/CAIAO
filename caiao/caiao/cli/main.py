@@ -273,7 +273,7 @@ if __name__ == "__main__":
     caiao_yaml = os.path.join(target_dir, "caiao.yaml")
     with open(caiao_yaml, "w", encoding="utf-8") as f:
         f.write(f"""name: {name}
-version: 0.1.0
+version: 1.0.3
 kind: {kind}
 description: "TODO: describe"
 status: active
