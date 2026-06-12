@@ -45,5 +45,7 @@ node_modules/
 # Frontend build
 visual_platform/frontend/dist/
 
+
 # Temp docs
 docs/CAIAO_Visual_Orchestration_Feasibility_Analysis.md
+.codebuddy/

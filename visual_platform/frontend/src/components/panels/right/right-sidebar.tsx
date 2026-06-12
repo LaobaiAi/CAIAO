@@ -1,0 +1,115 @@
+import { useReactFlow } from '@xyflow/react';
+import { ComponentGroup, getComponentGroups } from '@/data/sidebar-components';
+import { useComponentGroups } from '@/hooks/use-component-groups';
+import { useResizable } from '@/hooks/use-resizable';
+import { cn } from '@/lib/utils';
+import { ReactNode, useCallback, useEffect, useState } from 'react';
+import { ComponentActions } from './component-actions';
+import { ComponentList } from './component-list';
+
+interface RightSidebarProps {
+  children?: ReactNode;
+  isCollapsed: boolean;
+  onCollapse: () => void;
+  onExpand: () => void;
+  onWidthChange?: (width: number) => void;
+}
+
+export function RightSidebar({
+  isCollapsed,
+  onWidthChange,
+}: RightSidebarProps) {
+  const { width, isDragging, elementRef, startResize } = useResizable({
+    defaultWidth: 280,
+    minWidth: 200,
+    maxWidth: window.innerWidth * .90,
+    side: 'right',
+  });
+
+  useEffect(() => {
+    onWidthChange?.(width);
+  }, [width, onWidthChange]);
+
+  const [componentGroups, setComponentGroups] = useState<ComponentGroup[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const {
+    searchQuery,
+    setSearchQuery,
+    activeItem,
+    setActiveItem,
+    openGroups,
+    filteredGroups,
+    handleAccordionChange,
+    allCategories,
+    customCategories,
+    serverCategoryMap,
+    addCategory,
+    removeCategory,
+    moveServerToCategory,
+  } = useComponentGroups(componentGroups);
+
+  useEffect(() => {
+    const loadComponentGroups = async () => {
+      try {
+        setIsLoading(true);
+        const groups = await getComponentGroups(serverCategoryMap, customCategories);
+        setComponentGroups(groups);
+      } catch (error) {
+        console.error('Failed to load component groups:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadComponentGroups();
+  }, [serverCategoryMap, customCategories]);
+
+  const handleAddCategory = useCallback((categoryName: string) => {
+    addCategory(categoryName);
+  }, [addCategory]);
+
+  const handleDeleteCategory = useCallback((categoryName: string) => {
+    removeCategory(categoryName);
+  }, [removeCategory]);
+
+  const handleChangeCategory = useCallback((serverName: string, categoryName: string) => {
+    moveServerToCategory(serverName, categoryName);
+  }, [moveServerToCategory]);
+
+  return (
+    <div
+      ref={elementRef}
+      className={cn(
+        "h-full bg-panel flex flex-col relative pt-5 border-l",
+        isCollapsed ? "shadow-lg" : "",
+      )}
+      style={{ width: `${width}px` }}
+    >
+      <ComponentActions
+        onAddCategory={handleAddCategory}
+        onDeleteCategory={handleDeleteCategory}
+        customCategories={customCategories}
+      />
+
+      <ComponentList
+        componentGroups={componentGroups}
+        searchQuery={searchQuery}
+        isLoading={isLoading}
+        openGroups={openGroups}
+        filteredGroups={filteredGroups}
+        activeItem={activeItem}
+        onSearchChange={setSearchQuery}
+        onAccordionChange={handleAccordionChange}
+        allCategories={allCategories}
+        onChangeCategory={handleChangeCategory}
+      />
+
+      {!isDragging && (
+        <div
+          className="absolute top-0 left-0 h-full w-1 cursor-ew-resize transition-all duration-150 z-10"
+          onMouseDown={startResize}
+        />
+      )}
+    </div>
+  );
+}
